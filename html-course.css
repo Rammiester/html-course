@@ -1,110 +1,162 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Default background color */
+  color: #333;
+}
 
-  
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0; /* Default background color */
-      color: #333;
-    }
+.navbar {
+  background-color: #007bff; /* Navbar background color */
+}
 
-    .navbar {
-      background-color: #007bff; /* Navbar background color */
-    }
+.navbar-brand,
+.nav-link {
+  color: #fff; /* Navbar text color */
+}
 
-    .navbar-brand,
-    .nav-link {
-      color: #fff; /* Navbar text color */
-    }
+.navbar-brand:hover,
+.nav-link:hover {
+  color: #6e92b8; /* Navbar text color on hover */
+}
 
-    .navbar-brand:hover,
-    .nav-link:hover {
-      color: #6e92b8; /* Navbar text color on hover */
-    }
-    input[type="checkbox"] {
-        margin-right: 10px; /* Adjust as needed */
-        vertical-align: middle;
-    }
-    .checkbox-container {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
-      }
-    
-      /* Style for checkbox input */
-      .checkbox-container input[type="checkbox"] {
-        display: none;
-      }
-    
-      /* Style for custom checkbox */
-      .custom-checkbox {
-        width: 20px;
-        height: 20px;
-        border: 2px solid #6c757d; /* Gray border color */
-        border-radius: 4px;
-        background-color: #fff; /* White background */
-        display: inline-block;
-        position: relative;
-      }
-    
-      /* Style for checkbox tick */
-      .custom-checkbox::after {
-        content: "";
-        width: 5px;
-        height: 10px;
-        border: solid #28a745; /* Green color for tick */
-        border-width: 0 2px 2px 0;
-        position: absolute;
-        top: 2px;
-        left: 6px;
-        transform: rotate(45deg);
-        display: none;
-      }
-    
-      /* Style for checked state */
-      .checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
-        display: block;
-      }
-    label {
-        display: block;
-        margin-bottom: 10px; /* Adjust as needed */
-        font-size: 1.875rem;
-        color: #007bff ;
-        font-weight: bold;
-    }
-    section {
-      background-color: #fff; /* Section background color */
-      margin-bottom: 40px;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Section box shadow */
-    }
+input[type="checkbox"] {
+  margin-right: 10px; /* Adjust as needed */
+  vertical-align: middle;
+}
 
-    h2 {
-      color: #007bff; /* Heading color */
-      margin-bottom: 20px;
-    }
-    h3 {
-        color: #0056b3; /* Subheading color */
-        margin-bottom: 10px;
-      }
-  
-      p {
-        line-height: 1.6;
-        color: #555; /* Description color */
-      }
-    
+.checkbox-container {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
 
-    footer {
-      background-color: #343a40;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
+/* Style for checkbox input */
+.checkbox-container input[type="checkbox"] {
+  display: none;
+}
 
-    .progress {
-      height: 20px;
-      border-radius: 0;
-    }
+/* Style for custom checkbox */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #6c757d; /* Gray border color */
+  border-radius: 4px;
+  background-color: #fff; /* White background */
+  display: inline-block;
+  position: relative;
+}
 
-    .progress-bar {
-      background-color: #28a745;
-    }
+/* Style for checkbox tick */
+.custom-checkbox::after {
+  content: "";
+  width: 5px;
+  height: 10px;
+  border: solid #28a745; /* Green color for tick */
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  transform: rotate(45deg);
+  display: none;
+}
+
+/* Style for checked state */
+.checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
+  display: block;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Adjust as needed */
+  font-size: 1.875rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+section {
+  background-color: #fff; /* Section background color */
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Section box shadow */
+}
+
+h2 {
+  color: #007bff; /* Heading color */
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #0056b3; /* Subheading color */
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.6;
+  color: #555; /* Description color */
+}
+
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.progress {
+  height: 20px;
+  border-radius: 0;
+}
+
+.progress-bar {
+  background-color: #28a745;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 576px) {
+  /* Adjust styles for extra small devices (e.g., smartphones) */
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Adjust video dimensions for small screens */
+  iframe {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+  }
+
+  /* Adjust progress bar height for small screens */
+  .progress {
+    height: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust styles for small devices (e.g., tablets) */
+  .navbar-brand {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+} 
