@@ -7,117 +7,293 @@
   <!-- Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="html-course.css">
+  <style>
+    /* Custom CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0; /* Default background color */
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #007bff; /* Navbar background color */
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff; /* Navbar text color */
+    }
+
+    .navbar-brand:hover,
+    .nav-link:hover {
+      color: #6e92b8; /* Navbar text color on hover */
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px; /* Adjust as needed */
+      vertical-align: middle;
+    }
+
+    .checkbox-container {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* Style for checkbox input */
+    .checkbox-container input[type="checkbox"] {
+      display: none;
+    }
+
+    /* Style for custom checkbox */
+    .custom-checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #6c757d; /* Gray border color */
+      border-radius: 4px;
+      background-color: #fff; /* White background */
+      display: inline-block;
+      position: relative;
+    }
+
+    /* Style for checkbox tick */
+    .custom-checkbox::after {
+      content: "";
+      width: 5px;
+      height: 10px;
+      border: solid #28a745; /* Green color for tick */
+      border-width: 0 2px 2px 0;
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      transform: rotate(45deg);
+      display: none;
+    }
+
+    /* Style for checked state */
+    .checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
+      display: block;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px; /* Adjust as needed */
+      font-size: 1.875rem;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    section {
+      background-color: #fff; /* Section background color */
+      margin-bottom: 40px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Section box shadow */
+    }
+
+    h2 {
+      color: #007bff; /* Heading color */
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #0056b3; /* Subheading color */
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #555; /* Description color */
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .progress {
+      height: 20px;
+      border-radius: 0;
+    }
+
+    .progress-bar {
+      background-color: #28a745;
+    }
+
+    /* Media queries for responsiveness */
+    @media (max-width: 576px) {
+      /* Adjust styles for extra small devices (e.g., smartphones) */
+      .navbar-brand {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      /* Adjust video dimensions for small screens */
+      iframe {
+        width: 100%;
+        height: 200px; /* Adjust height as needed */
+      }
+
+      /* Adjust progress bar height for small screens */
+      .progress {
+        height: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Adjust styles for small devices (e.g., tablets) */
+      .navbar-brand {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#" style="font-weight: 800; color: #007bff;">Basic HTML course</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#" style="font-weight: 800; color: #007bff;">Basic HTML course</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#section1">Section 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#section2">Section 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#section3">Section 3</a>
-              </li>
-              <!-- Add more nav items for additional sections -->
-            </ul>
-            <!-- Language selection dropdown -->
-            <div class="dropdown ml-auto">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown"
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section1">Section 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section2">Section 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section3">Section 3</a>
+        </li>
+        <!-- Add more nav items for additional sections -->
+      </ul>
+      <!-- Language selection dropdown -->
+      <div class="dropdown ml-auto">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select Language
-              </button>
-              <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                <a class="dropdown-item" href="#" onclick="translatePage('en')">English</a>
-                <a class="dropdown-item" href="#" onclick="translatePage('hi')">Hindi</a>
-                <a class="dropdown-item" href="#" onclick="translatePage('es')">Spanish</a>
-                <a class="dropdown-item" href="#" onclick="translatePage('fr')">French</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-
-    <!-- Main sections -->
-    <section id="section1">
-      <label>
-        <input type="checkbox" id="section1Checkbox" onclick="toggleCheckbox('section1Checkbox')" class="checkbox">
-        Section 1: Introduction to HTML
-    </label>
-      <!-- <label for="section1Checkbox">&#10004;</label> -->
-      <p>This section covers basic HTML elements and their usage.</p>
-      <!-- Video player for HTML introduction -->
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/BvJYXl2ywUE?si=wJEDu8soXlgACemX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      <ul>
-        <li>
-            
-            <h3>Section 1.1: HTML components</h3>
-            <p>In this segment, we explore the components of an HTML element and put that understanding into practice by crafting an HTML about page for a musician of your selection. By the conclusion of this tutorial, you will have developed the entire HTML code for the initial page of this course's band website assignment.</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/PypMN-yui4Y?si=xbPOF1-n3dDspFcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </li>
-      </ul>
-    </section>
-
-    <section id="section2">
-      <label>
-        <input type="checkbox" id="section2Checkbox" onclick="toggleCheckbox('section2Checkbox')" class="checkbox">
-        Section 2: Advanced HTML Elements
-      </label>
-      
-      <p>Get ready to code your band's website! This video dives into the building blocks of web pages: HTML elements. We'll master the powerful span and div tags, then use them to craft a killer home page for your music.</p>
-      <!-- Audio player for HTML structure explanation -->
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/1rbo_HHt5nw?si=9Mq37bMC6OMoKSJo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      <ul>
-        <li>
-            <h3>Section 2.1: Links and Inputs</h3>
-            <p>Last stop, web warriors! Conquer links and forms (anchor & input tags) to build your band's store page. By video's end, you'll have a complete HTML website and HTML fluency!</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/bFvjE4ZRtSE?si=rZCbfLuDVnZF1cZN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </li>
-      </ul>
-    </section>
-
-    <section id="section3">
-      <label>
-        <input type="checkbox" id="section3Checkbox" onclick="toggleCheckbox('section3Checkbox')" class="checkbox">
-        Section 3: 20 Minutes to Stunning Web Design: Your Intro to CSS
-      </label>
-        <p>Master CSS, the secret weapon of web design, in this quick and effective video. Learn syntax, colors, units, and best practices with a full example walkthrough. Be ready to unleash your creative vision on any webpage!</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/1PnVor36_40?si=CMHkhQTA8ltFKQaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </section>
-
-    <!-- Add more sections as needed -->
-
-    <!-- Footer with progress tracking -->
-    <footer>
-      <p style="color: white;">Progress: <span id="progress">0%</span></p>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          Select Language
+        </button>
+        <div class="dropdown-menu" aria-labelledby="languageDropdown">
+          <a class="dropdown-item" href="#" onclick="translatePage('en')">English</a>
+          <a class="dropdown-item" href="#" onclick="translatePage('hi')">Hindi</a>
+          <a class="dropdown-item" href="#" onclick="translatePage('es')">Spanish</a>
+          <a class="dropdown-item" href="#" onclick="translatePage('fr')">French</a>
+        </div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </nav>
 
-  <!-- Bootstrap JS (optional, if you need JavaScript functionality) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Main sections -->
+  <section id="section1">
+    <label>
+      <input type="checkbox" id="section1Checkbox" onclick="toggleCheckbox('section1Checkbox')" class="checkbox">
+      Section 1: Introduction to HTML
+    </label>
+    <!-- <label for="section1Checkbox">&#10004;</label> -->
+    <p>This section covers basic HTML elements and their usage.</p>
+    <!-- Video player for HTML introduction -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/BvJYXl2ywUE?si=wJEDu8soXlgACemX"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    <ul>
+      <li>
 
-  <!-- JavaScript for language translation and progress tracking -->
-  <script src="translate.js"></script>
-  <script src="update-checkbox.js"> 
-  </script>
+        <h3>Section 1.1: HTML components</h3>
+        <p>In this segment, we explore the components of an HTML element and put that understanding into practice by
+          crafting an HTML about page for a musician of your selection. By the conclusion of this tutorial, you will have
+          developed the entire HTML code for the initial page of this course's band website assignment.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PypMN-yui4Y?si=xbPOF1-n3dDspFcu"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </li>
+    </ul>
+  </section>
 
+  <section id="section2">
+    <label>
+      <input type="checkbox" id="section2Checkbox" onclick="toggleCheckbox('section2Checkbox')" class="checkbox">
+      Section 2: Advanced HTML Elements
+    </label>
 
+    <p>Get ready to code your band's website! This video dives into the building blocks of web pages: HTML elements.
+      We'll master the powerful span and div tags, then use them to craft a killer home page for your music.</p>
+    <!-- Audio player for HTML structure explanation -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1rbo_HHt5nw?si=9Mq37bMC6OMoKSJo"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    <ul>
+      <li>
+        <h3>Section 2.1: Links and Inputs</h3>
+        <p>Last stop, web warriors! Conquer links and forms (anchor & input tags) to build your band's store page. By
+          video's end, you'll have a complete HTML website and HTML fluency!</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bFvjE4ZRtSE?si=rZCbfLuDVnZF1cZN"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </li>
+    </ul>
+  </section>
+
+  <section id="section3">
+    <label>
+      <input type="checkbox" id="section3Checkbox" onclick="toggleCheckbox('section3Checkbox')" class="checkbox">
+      Section 3: 20 Minutes to Stunning Web Design: Your Intro to CSS
+    </label>
+    <p>Master CSS, the secret weapon of web design, in this quick and effective video. Learn syntax, colors, units, and
+      best practices with a full example walkthrough. Be ready to unleash your creative vision on any webpage!</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1PnVor36_40?si=CMHkhQTA8ltFKQaM"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+  </section>
+
+  <!-- Footer with progress tracking -->
+  <footer>
+    <p style="color: white;">Progress: <span id="progress">0%</span></p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+           aria-valuemax="100"></div>
+    </div>
+  </footer>
+</div>
+
+<!-- Bootstrap JS (optional, if you need JavaScript functionality) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- JavaScript for language translation and progress tracking -->
+<script src="translate.js"></script>
+<script src="update-checkbox.js"></script>
 
 </body>
 </html>
